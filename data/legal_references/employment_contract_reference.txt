@@ -1,0 +1,50 @@
+EMPLOYMENT CONTRACT LEGAL REFERENCE
+=======================================
+
+Common Provisions and Employee Rights under Indian Law
+(Industrial Disputes Act, 1947; Shops & Establishments Acts; Labour Codes, 2020)
+
+1. PROBATION PERIOD
+   - Standard probation: 3-6 months, extendable to 12 months maximum.
+   - Employee should receive written confirmation of completion or extension.
+   - Termination during probation requires minimum 1 month notice or pay in lieu.
+   - Probation terms must be clearly stated in appointment letter.
+
+2. NOTICE PERIOD
+   - Standard notice period: 1-3 months.
+   - Notice period should be mutual (same duration for employer and employee).
+   - Garden leave provisions should be compensated at full pay.
+   - Notice buy-out clauses must be explicitly agreed upon.
+
+3. NON-COMPETE CLAUSES
+   - Post-employment non-compete clauses are generally unenforceable in India (Section 27, Indian Contract Act).
+   - Non-solicitation clauses for a reasonable duration (6-12 months) may be enforceable.
+   - Restrictive covenants during employment are valid if reasonable.
+
+4. CONFIDENTIALITY AND IP
+   - Confidentiality obligations should survive termination for a defined period.
+   - IP assignment clauses should clearly distinguish between work-related and personal creations.
+   - Trade secret protections must be specific (not overly broad).
+
+5. COMPENSATION AND BENEFITS
+   - Salary structure (basic, HRA, allowances) must be clearly broken down.
+   - Bonus terms should specify conditions and timelines.
+   - Gratuity is mandatory after 5 years of continuous service.
+   - PF and ESI contributions must comply with statutory requirements.
+
+6. TERMINATION
+   - Termination for cause must specify valid grounds.
+   - Retrenchment requires compliance with Industrial Disputes Act procedures.
+   - Severance pay requirements vary by tenure and applicable law.
+   - Full and final settlement should be completed within 30-45 days.
+
+7. LEAVE POLICY
+   - Minimum earned leave: 15-21 days per year (varies by state).
+   - Sick leave and casual leave must comply with local Shops & Establishments Act.
+   - Maternity leave: 26 weeks (Maternity Benefit Act, 2017).
+   - Leave encashment policy must be documented.
+
+8. DISPUTE RESOLUTION
+   - Internal grievance mechanism should be specified.
+   - Arbitration or mediation clauses are preferable to direct litigation.
+   - Jurisdiction should be clearly stated (typically where workplace is located).

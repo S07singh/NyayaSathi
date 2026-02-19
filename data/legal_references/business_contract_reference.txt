@@ -1,0 +1,56 @@
+SMALL BUSINESS CONTRACT LEGAL REFERENCE
+==========================================
+
+Common Provisions and Business Rights under Indian Law
+(Indian Contract Act, 1872; Sale of Goods Act, 1930; Arbitration and Conciliation Act, 1996)
+
+1. SCOPE OF WORK
+   - Deliverables must be clearly defined with measurable acceptance criteria.
+   - Change order procedures should be documented.
+   - Timeline and milestones must be explicitly stated.
+   - Ambiguous scope descriptions create dispute risk.
+
+2. PAYMENT TERMS
+   - Payment milestones should be tied to deliverables.
+   - Standard payment terms: 30-60 days from invoice date.
+   - Late payment interest should be specified (typically 12-18% per annum).
+   - Advance payment terms and conditions must be clear.
+
+3. LIABILITY AND INDEMNIFICATION
+   - Liability caps should be reasonable (typically contract value or 2x contract value).
+   - Unlimited liability clauses are high risk and often negotiable.
+   - Indemnification should be mutual, not one-sided.
+   - Carve-outs for IP infringement and confidentiality breaches are standard.
+
+4. INTELLECTUAL PROPERTY
+   - IP ownership of deliverables must be explicitly assigned.
+   - Pre-existing IP should be clearly excluded with license grants.
+   - Background IP rights should be preserved for the service provider.
+   - IP warranties (non-infringement) should be included.
+
+5. TERMINATION
+   - Both parties should have equal termination rights.
+   - Termination for convenience should require reasonable notice (30-60 days).
+   - Termination for cause should include cure period (15-30 days).
+   - Post-termination obligations (data return, transition) should be specified.
+
+6. CONFIDENTIALITY
+   - Duration should be defined (typically 2-5 years post-termination).
+   - Exceptions for publicly available information must be included.
+   - Return or destruction of confidential materials should be required.
+
+7. WARRANTIES
+   - Warranty period should be at least 30-90 days post-delivery.
+   - Warranty remedies (repair, replace, refund) must be specified.
+   - Disclaimer of implied warranties should be carefully reviewed.
+
+8. DISPUTE RESOLUTION
+   - Arbitration is generally faster and more cost-effective than litigation.
+   - Seat of arbitration should be mutually convenient.
+   - Governing law and jurisdiction must be specified.
+   - Mediation as a first step before arbitration is recommended.
+
+9. FORCE MAJEURE
+   - Events covered should be specifically listed (not just generic "Act of God").
+   - Notice requirements during force majeure should be defined.
+   - Both parties should have right to terminate if force majeure persists beyond a defined period.
