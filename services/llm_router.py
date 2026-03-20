@@ -28,19 +28,27 @@ logger = get_logger(__name__)
 class LLMRouter:
     """Unified interface for routing prompts to Groq or Ollama."""
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        groq_api_key: Optional[str] = None,
+        ollama_base_url: Optional[str] = None,
+    ) -> None:
+        # Resolve credentials: caller-provided → env-var / config defaults
+        resolved_key = groq_api_key or config.GROQ_API_KEY
+        resolved_ollama = ollama_base_url or config.OLLAMA_BASE_URL
+
         # Groq setup — lazy; only fail when actually called in fast mode.
         self._groq_client = None
-        if config.GROQ_API_KEY:
+        if resolved_key:
             try:
                 from groq import Groq
-                self._groq_client = Groq(api_key=config.GROQ_API_KEY)
+                self._groq_client = Groq(api_key=resolved_key)
                 logger.info("Groq client initialised (model: %s)", config.GROQ_MODEL)
             except Exception as exc:  # noqa: BLE001
                 logger.warning("Could not initialise Groq client: %s", exc)
 
         # Ollama — just store the base URL; connectivity checked on demand.
-        self._ollama_url = config.OLLAMA_BASE_URL.rstrip("/")
+        self._ollama_url = resolved_ollama.rstrip("/")
         logger.info("Ollama base URL: %s (model: %s)", self._ollama_url, config.OLLAMA_MODEL)
 
     # ── Public API ────────────────────────────────────────────────────

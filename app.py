@@ -188,9 +188,23 @@ for key, default in _DEFAULTS.items():
 #  SERVICE INITIALISATION (cached)
 # ══════════════════════════════════════════════════════════════════════
 
-@st.cache_resource(show_spinner="Loading LLM Router …")
-def get_llm_router() -> LLMRouter:
-    return LLMRouter()
+def get_llm_router(
+    groq_api_key: str = "",
+    ollama_base_url: str = "",
+) -> LLMRouter:
+    """Return an LLMRouter using the user's credentials.
+
+    The router is cached in session_state and only re-created when the
+    credentials change, so each visitor on Streamlit Cloud gets their own
+    instance without impacting other users.
+    """
+    cache_key = f"_llm_router_{groq_api_key}_{ollama_base_url}"
+    if cache_key not in st.session_state:
+        st.session_state[cache_key] = LLMRouter(
+            groq_api_key=groq_api_key or None,
+            ollama_base_url=ollama_base_url or None,
+        )
+    return st.session_state[cache_key]
 
 
 @st.cache_resource(show_spinner="Loading Embedding Model …")
@@ -316,7 +330,7 @@ with st.sidebar:
     st.caption(f"v{config.APP_VERSION}")
     st.divider()
 
-    # Mode selection
+    # ── Mode selection ────────────────────────────────────────────────
     mode = st.radio(
         "🤖 **AI Mode**",
         options=["⚡ Fast (Groq)", "🔒 Private (Ollama)"],
@@ -325,22 +339,53 @@ with st.sidebar:
     )
     llm_mode = "fast" if "Fast" in mode else "private"
 
-    # Availability check
-    router = get_llm_router()
+    # ── User credentials ──────────────────────────────────────────────
+    st.divider()
+
+    if llm_mode == "fast":
+        user_groq_key = st.text_input(
+            "🔑 **Your Groq API Key**",
+            type="password",
+            placeholder="gsk_...",
+            help="Get a free key at https://console.groq.com — your key is never stored on our servers.",
+        )
+        user_ollama_url = ""
+    else:
+        user_groq_key = ""
+        user_ollama_url = st.text_input(
+            "🌐 **Your Ollama URL**",
+            value="http://localhost:11434",
+            help=(
+                "Enter the URL of your locally-running Ollama server. "
+                "Ollama must be running on YOUR machine (not this cloud server). "
+                "If running locally, open http://localhost:11434 to verify."
+            ),
+        )
+
+    # Build router with user-provided credentials
+    router = get_llm_router(
+        groq_api_key=user_groq_key,
+        ollama_base_url=user_ollama_url,
+    )
+
+    # Availability indicator
     if llm_mode == "fast":
         if router.is_groq_available():
             st.success("Groq API connected", icon="✅")
         else:
-            st.warning("Set `GROQ_API_KEY` env variable to use Fast mode.", icon="⚠️")
+            st.info("Enter your Groq API key above to get started.", icon="🔑")
     else:
         if router.is_ollama_available():
             st.success("Ollama server connected", icon="✅")
         else:
-            st.warning("Start Ollama server to use Private mode.", icon="⚠️")
+            st.warning(
+                "Cannot reach Ollama. Make sure it's running on your machine.",
+                icon="⚠️",
+            )
 
     st.divider()
 
-    # File upload
+    # ── File upload ───────────────────────────────────────────────────
     uploaded_file = st.file_uploader(
         "📄 **Upload Legal Document**",
         type=["pdf", "docx"],
